@@ -1,6 +1,6 @@
 {
     "name": "ashiful/tg",
-    "description": "Automatic Pest test generator for Laravel (Blade & Inertia)",
+    "description": "Automatic Pest test generator for Laravel",
     "type": "library",
     "license": "MIT",
     "authors": [

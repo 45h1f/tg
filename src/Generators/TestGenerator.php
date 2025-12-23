@@ -56,10 +56,12 @@ class TestGenerator
         
         $relativePath = '';
         if (str_starts_with($className, $baseNamespace)) {
+            // It is an App Controller -> Keep relative naming (e.g. Auth/LoginController)
             $subPath = substr($className, strlen($baseNamespace));
             $relativePath = str_replace('\\', '/', $subPath);
         } else {
-             $relativePath = class_basename($groupKey);
+             // It is a Vendor/External Controller -> Use Full Namespace (e.g. Laravel/Fortify/Http/...)
+             $relativePath = str_replace('\\', '/', $className);
         }
 
         $testName = class_basename($className) . 'Test';
